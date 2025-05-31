@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: clelia.dev
+  site: 'https://clelia.dev'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Clelia Astra Bertelli
+    template: '%s — Portfolio and Blog'
+  description: "\U0001F680 Open Source Engineer and passionate AI developer"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: clelia.dev
     images:
       - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+        width: 1100
+        height: 500
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@itsclelia'
+    site: '@itsclelia'
     cardType: summary_large_image
 
 i18n:
