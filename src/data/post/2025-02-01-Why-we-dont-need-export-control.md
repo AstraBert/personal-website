@@ -1,5 +1,5 @@
 ---
-publishDate: 2024-12-30T00:00:00Z
+publishDate: 2024-02-010T00:00:00Z
 author: Clelia Astra Bertelli
 title: Why we (don't) need export control
 excerpt: A critic on Dario Amodei's perspective over AI geopolitical hegemony in the coming years
