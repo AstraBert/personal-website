@@ -45,6 +45,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/AstraBert/' },
   ],
   footNote: `
-    Built with <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a>, made by Clelia Astra Bertelli · 2025 · All rights reserved.
+    Built with <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo/astrowind"> onWidget</a>, made by Clelia Astra Bertelli · 2025 · All rights reserved.
   `,
 };
