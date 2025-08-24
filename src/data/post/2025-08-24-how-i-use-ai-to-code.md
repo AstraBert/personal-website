@@ -2,7 +2,7 @@
 publishDate: 2025-08-24T00:00:00Z
 author: Clelia Astra Bertelli
 title: How I use AI to code
-excerpt: A brief overview of how I integrated AI in my dev flow, as well as of the tool I a using.
+excerpt: A brief overview of how I integrated AI in my dev flow, as well as of the tool I am using.
 category: Coding
 tags:
   - ai
