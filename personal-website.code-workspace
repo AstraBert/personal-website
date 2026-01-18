@@ -1,10 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"js/ts.implicitProjectConfig.checkJs": true
-	}
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "js/ts.implicitProjectConfig.checkJs": true,
+  },
 }

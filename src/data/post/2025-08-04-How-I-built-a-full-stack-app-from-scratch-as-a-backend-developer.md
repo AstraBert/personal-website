@@ -12,9 +12,9 @@ metadata:
   canonical: https://www.clelia.dev/blog/2025-08-04-how-i-built-a-full-stack-app-from-scratch-as-a-backend-developer
 ---
 
-Almost a year ago, in those naive days when *vibe coding* wasn’t even an expression, I was building frontends in TypeScript almost exclusively using LLMs: as everybody else, I first attempted coding with ChatGPT, then, out of frustration, I moved to Gemini and Claude, but maybe the times were too immature and the results were often disappointing and far from the liquid, dynamic and beautiful interfaces that populate the modern web.
+Almost a year ago, in those naive days when _vibe coding_ wasn’t even an expression, I was building frontends in TypeScript almost exclusively using LLMs: as everybody else, I first attempted coding with ChatGPT, then, out of frustration, I moved to Gemini and Claude, but maybe the times were too immature and the results were often disappointing and far from the liquid, dynamic and beautiful interfaces that populate the modern web.
 
-Today, when *vibe coding* is indeed a thing, and everybody is talking about how they’ve built their own shiny app in [Lovable](https://lovable.dev) (which, by the way, I highly appreciate as a tool), I decided I needed to learn frontend and full stack development.
+Today, when _vibe coding_ is indeed a thing, and everybody is talking about how they’ve built their own shiny app in [Lovable](https://lovable.dev) (which, by the way, I highly appreciate as a tool), I decided I needed to learn frontend and full stack development.
 
 In this sense, this weeekend I decided to dedicate part of my time to developing a full stack application completely from scratch - the objective was simple, a **cat feeding tracker web application**, but the implementation was indeed trickier than I expected:
 
@@ -30,13 +30,13 @@ The first thing I do when I want to build a full stack application is looking fo
 
 When I talk about similar project, I’m mostly talking about other GitHub repositories that serve the same purpose of the thing you want to build, or a similar one: for examples, I highly recommend you to hunt for inspiration for your personal portfolio in GitHub, which is a real gold mine in terms of that. You can open [GitHub Topics](https://github.com/topics) (or even just the search bar in your home page) and then search for whatever you would like to create: most of the times I already know the language I want to create the application with, so I also filter for that. After I found a bunch of repositories, I go through them and I select them according to three main criteria: **complexity** (the app has to align with the complexity I have in mind), **customizability** (the app should be easy to change and customize) and **presence of a demo** (the fact that there is a demo means that the app deploys and works) - a bonus criterion is often the README/documentation: most of the times READMEs/docs are minimal and do not give you any useful instructions, so when they are there it means you already have a good point to start.
 
-If you can’t find actual products that are similar to the one you want to build, you can try with templates: oftentimes companies or OSS organizations release their own templates for applications (e.g. [chat-ui](https://ui.llamaindex.ai) as  chatbot template by LlamaIndex) that are easily pluggable and vastly customizable: using a template often requires more work than just forking a working project, but the result gains points on the side of personalization.
+If you can’t find actual products that are similar to the one you want to build, you can try with templates: oftentimes companies or OSS organizations release their own templates for applications (e.g. [chat-ui](https://ui.llamaindex.ai) as chatbot template by LlamaIndex) that are easily pluggable and vastly customizable: using a template often requires more work than just forking a working project, but the result gains points on the side of personalization.
 
 If you really can’t find anything that suits you, not even a template, than you can fall back on scaffolds: I really like NextJS, so I often initialize my applications (included the cat feeding tracker) with `create-next-app`, but there are scaffolds for a lot of other frameworks that might better fit your needs!
 
 ## 2. Use tutorial code
 
-When you start building the application and you look at the cursor blinking at the beginning of an empty script, it is very easy to feel lost: this is why, whenever I start actually coding (after finding a project, a template or a scaffold), the first thing I do is to look for tutorials. 
+When you start building the application and you look at the cursor blinking at the beginning of an empty script, it is very easy to feel lost: this is why, whenever I start actually coding (after finding a project, a template or a scaffold), the first thing I do is to look for tutorials.
 
 Given how my brain works, tutorials are much more of a fit for me than the actual documentation: most of the times documentation has many explanations and few code, whereas tutorials have less explanation and are much richer in code.
 

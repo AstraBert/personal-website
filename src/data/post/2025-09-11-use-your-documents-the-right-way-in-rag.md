@@ -14,11 +14,11 @@ metadata:
 
 Over the past two and a half years, I’ve spent a significant amount of my life programming and, more specifically, building AI-powered software.
 
-One of my first loves in this domain was RAG: the concept of being able to have an AI answering questions based on *my* documents was fascinating. I saw it as a revolutionary perspective, especially in terms of personalized learning: I could build *my own* knowledge base and ask AI any questions about it.
+One of my first loves in this domain was RAG: the concept of being able to have an AI answering questions based on _my_ documents was fascinating. I saw it as a revolutionary perspective, especially in terms of personalized learning: I could build _my own_ knowledge base and ask AI any questions about it.
 
 From my first ever projects, using [NucliaDB](https://nuclia.com/vector-database/) and [Pinecone](https://www.pinecone.io), to my more mature ones with [Qdrant](https://qdrant.tech), the main idea was always the same: building reliable knowledge systems.
 
-The **data** have always been the *central theme* of all of these projects: how to collect them, how to process them and how to efficiently provide them to the language model powering the knowledge system.
+The **data** have always been the _central theme_ of all of these projects: how to collect them, how to process them and how to efficiently provide them to the language model powering the knowledge system.
 
 In this blog post, I want to focus on one specific thing: how to process the data, and, more specifically, how to process raw, unstructured documents the right way.
 

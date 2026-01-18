@@ -16,17 +16,17 @@ metadata:
 
 ## An Introduction
 
-Recently I've shifted from building applications with AI agents to mostly employing workflows, especially [llama-index-workflows](https://github.com/run-llama/workflows-py). 
+Recently I've shifted from building applications with AI agents to mostly employing workflows, especially [llama-index-workflows](https://github.com/run-llama/workflows-py).
 
 It is important to draw a clear line between the two things: agents are meant to be autonomous, workflows for automation.
 
-Autonomy vs Automation is *the* difference between the two protocols - but there are many more: agents are completely AI-driven, can interact with the external environment (*lato sensu*) through tools, and can make decisions based on the response from the environment, adjusting its behaviour to it (optimally).
+Autonomy vs Automation is _the_ difference between the two protocols - but there are many more: agents are completely AI-driven, can interact with the external environment (_lato sensu_) through tools, and can make decisions based on the response from the environment, adjusting its behaviour to it (optimally).
 
 Workflows are pre-defined, can be AI-powered but they are not AI driven, and they behave according to well designed protocols and sets of rules.
 
 Given this, the title of my blog post doesn't seem to make sense: how can I bet on rigidity instead of flexibility, how can a non-adaptable system be better than an adaptable one?
 
-Well, bear with me, because I'll go through some features and design patterns that make workflows *the* thing to be betting on, at least for the nearest future. 
+Well, bear with me, because I'll go through some features and design patterns that make workflows _the_ thing to be betting on, at least for the nearest future.
 
 ## The Predictability Key
 
@@ -46,19 +46,19 @@ From my experience in building real-world workflows, I can tell you three design
 
 ### 1. Use structure whenever you can
 
-Structured input and output are at the base of reliability, especially if you are using LLMs or agents within the steps and you need to fetch data from their outputs. 
+Structured input and output are at the base of reliability, especially if you are using LLMs or agents within the steps and you need to fetch data from their outputs.
 
 Whenever you provide structure, you are not only cleaning chaos, but you are adding an extra layer of error-proofing to your workflow, by avoiding inconsistent and potentially disruptive responses.
 
 So, every time you get a chance, use structured input (for example with XML tagging or JSON strings) and extract structured outputs (Pydantic models are the best for this!).
 
-> *I wrote a post on why and how I use Pydantic, feel free to check it out [here](https://www.clelia.dev/2025-07-11-why-and-how-i-am-a-pydantic-user).*
+> _I wrote a post on why and how I use Pydantic, feel free to check it out [here](https://www.clelia.dev/2025-07-11-why-and-how-i-am-a-pydantic-user)._
 
 ### 2. Atomize tasks within the workflow
 
 I define atomization as the division of tasks into simple units - each step of the workflow has to do one thing - in a RAG workflow, for example, one step would search the semantic cache, one do query transformation, one perform retrieval, another one rerank the results and one last would perform generation.
 
-Atomization is the key to success in production: you don't need to write monolithic, *factotum* code, you need to write clean, feature-focused code. 
+Atomization is the key to success in production: you don't need to write monolithic, _factotum_ code, you need to write clean, feature-focused code.
 
 This is the exact reason why stepwise execution of workflows is so successful: you have control over what happens in your pipeline, you can debug faster and pinpoint errors at a precise step without having to use convoluted logging or blind print statements to understand what is going wrong.
 
@@ -76,12 +76,12 @@ But what happens when you add a third, a fourth, a n-nth step?
 
 In that case, either you pass the information needed by the n-th step through n-1 events, or you opt for something smarter: create a state and associate it with the workflow.
 
-It does not need to be a persistent state, as in systems that are purely state-based - it is enough to use a `dataclass` or a Pydantic BaseModel. The important things are: 
+It does not need to be a persistent state, as in systems that are purely state-based - it is enough to use a `dataclass` or a Pydantic BaseModel. The important things are:
 
 - the state has clear, readable attributes with well defined functions (like `username` will store the username of the user, and `emailAddress` the email address)
 - The the state attributes can be fetched and set at every time
 
-Bonus points: 
+Bonus points:
 
 - The state is serializable (in that way you can write it to a file and read it later, allowing for some kind of persistency).
 - Calls to fetch/set the state attributes are asynchronous, which is very important to maintain the general asynchronous design without risking time-outs in read/write operations.
@@ -92,11 +92,11 @@ This event-driven architecture with a dynamic global state is a perfect combinat
 
 I want to conclude this blog post with a real world example of how I applied those design principles, taking one of my latest projects: [gut](https://gut-ai.clelia.dev).
 
-*gut* is a CLI tool for automating `git` and `gh` commands, and follows this workflow:
+_gut_ is a CLI tool for automating `git` and `gh` commands, and follows this workflow:
 
 1. The LLM is prompted to choose (structured output) between git and gh ([reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/workflow/flow.py#L35-L62))
 2. The LLM is asked to build the command, by producing a subcommand (like `commit`) and the options for the subcommand (like `-m 'first commit'`) - this is also done with structured output ([reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/workflow/flow.py#L65-L112))
-3.  The LLM finally is asked to explain the command, putting it in the perspective of the user’s request (we use structured input and output also here; [reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/workflow/flow.py#L115-L161))
+3. The LLM finally is asked to explain the command, putting it in the perspective of the user’s request (we use structured input and output also here; [reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/workflow/flow.py#L115-L161))
 4. Finally, the explanation is exposed to the user, which decides whether the command can be executed or not ([reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/main.py#L39-L58))
 5. If the feedback is positive, the command is executed, else the workflow re-starts adding the feedback to the starting user’s instructions (stored in the global state;: [reference](https://github.com/AstraBert/gut/blob/814f034d7b5d210bd7cb0013b4cd687b7969a80f/src/gut/workflow/flow.py#L164-L188))
 

@@ -2,7 +2,7 @@
 publishDate: 2026-01-18T00:00:00Z
 author: Clelia Astra Bertelli
 title: Rust - First impressions
-excerpt: 
+excerpt: My first impressions from my journey into Rust.
 category: Coding
 tags:
   - rust
@@ -28,7 +28,7 @@ At that point, I said to myself: what if the Rust I need is not the highly-optim
 
 ## What I've been doing
 
-Up to now, I've built some small projects with Rust to get familiar with the language: 
+Up to now, I've built some small projects with Rust to get familiar with the language:
 
 - [**workspyce**](https://github.com/AstraBert/workspyce): a CLI tool to manage uv workspaces, with which I could practice file operations, the shell interface and regex patterns in Rust
 - [**personal-wiki**](https://github.com/AstraBert/personal-wiki): a web app that can turn markdown into HTML wiki pages. Built on top of Axum (API layer) and Turso (database), I had the possibility of experimenting with async Rust, as well as getting familiar with the Axum ecosystem for things like CORS and rate limiting.
@@ -37,7 +37,6 @@ Up to now, I've built some small projects with Rust to get familiar with the lan
 - [**codemd**](https://github.com/AstraBert/codemd): a CLI tool to extract code from markdown and run it with custom commands.
 
 > Building for me is the best way of learning, that is why I am striving to build as much as I can, but it's my personal preference: if you are more comfortable learning from books or tutorials, please don't feel like you're missing out or falling behind! Everyone learns and builds at their own pace :)
-> 
 
 ## My impressions so far
 
@@ -81,14 +80,14 @@ Obviously, writing python is still incredibly easier than writing Rust, because 
 
 Obviously, that is also the downside of python: even with severe type checking, it does not mean you're avoiding runtime bugs, and its simplicity is often a trap: errors sneak right where you don't expect them.
 
-If I could *borrow* (pun intended) anything from rust to port into python, I would take two things:
+If I could _borrow_ (pun intended) anything from rust to port into python, I would take two things:
 
 - The toolchain (`cargo` is amazing and does tons of stuff out of the box)
 - Errors as values: Rust treats errors as values (most of the times, although you can always opt out of it with the infamous `unwrap` ), but in a less verbose way than Go does: this means you know when some code can produce an error, and you can act accordingly (premature return, graceful shutdown…), whereas with python `try...except` statements are never guaranteed to work, unless you catch all generic exceptions, at which point you can't really customize your software’s behavior based on the error type.
 
 ### Rust and Typescript
 
-Despite being a high level programming language, Typescript has managed to successfully introduce static typing, exactly like Rust does. Besides that, both languages are extremely versatile: you can build backends and frontends with both of them, but you can also easily write CLI applications. 
+Despite being a high level programming language, Typescript has managed to successfully introduce static typing, exactly like Rust does. Besides that, both languages are extremely versatile: you can build backends and frontends with both of them, but you can also easily write CLI applications.
 
 Beyond the similarities, tho, I surprisingly find Rust easier than Typescript: for me, TS can become unreadable quickly when a codebase (and thus its complexity) grows, plus I feel like I can't really write clean code with it (but maybe it's a skill issue).
 

@@ -19,7 +19,7 @@ metadata:
 November 2022 changed the life of humans forever: the world of Artificial Intelligence, that had been operating for years out of the spotlight, finally came to the limelights with OpenAI's ChatGPT, a chat interface that leveraged a Large Language Model (GPT-3) to generate responses to the humans it interacted with.
 The excitement around AI exited then for the first time the scientific community, reaching also the business world: in almost two years, investments and revenues in the field rocketed, with big and small companies pushing the revolution further, testing the limits of our technologies.
 
-In less than two years, from GPT-3 to Llama-3, the data volumes for AI went up from 10^11 to 10^13 training tokens, and this data hunger, combined with the need for computational power, will drive the increase in data centers' energy demand to almost double its current size in 2030. 
+In less than two years, from GPT-3 to Llama-3, the data volumes for AI went up from 10^11 to 10^13 training tokens, and this data hunger, combined with the need for computational power, will drive the increase in data centers' energy demand to almost double its current size in 2030.
 
 Environmental costs of Artificial Intelligence are pretty much obscure, due to non-disclosure policies of the companies that build the most of it, but the path is clear: its power needs will be huge, and the consequences on the electrical consumption will be very relevant.
 
@@ -29,9 +29,9 @@ The question now is: how will we be able to power this revolution without worsen
 
 **1. AI companies are investing in more powerful hardwares**
 
-Following [Beth Kindig's steps on Forbes](https://www.forbes.com/sites/bethkindig/2024/06/20/ai-power-consumption-rapidly-becoming-mission-critical/), we can see that hardware-producing companies, such as NVIDIA, AMD and Intel, are putting money into more and more powerful chips, able to manage larger data volumes in a fast and efficient way, but with increased power requirements: 
+Following [Beth Kindig's steps on Forbes](https://www.forbes.com/sites/bethkindig/2024/06/20/ai-power-consumption-rapidly-becoming-mission-critical/), we can see that hardware-producing companies, such as NVIDIA, AMD and Intel, are putting money into more and more powerful chips, able to manage larger data volumes in a fast and efficient way, but with increased power requirements:
 
-- Up to now, the two most powerful NVIDIA GPU hardwares, A100 and H100, consume respectively 250W/chip and 300 to 700W/chip when brought to the maximum power. The next generation GPUs, Blackwell's series B200 and GB200, will be able to run at 1200 and 2700W/chip, with a 4-fold increase in their power consumption 
+- Up to now, the two most powerful NVIDIA GPU hardwares, A100 and H100, consume respectively 250W/chip and 300 to 700W/chip when brought to the maximum power. The next generation GPUs, Blackwell's series B200 and GB200, will be able to run at 1200 and 2700W/chip, with a 4-fold increase in their power consumption
 - AMD's most powerful GPU hardware, MI300x, consumes 750W/chip, up to 50% compared to its predecessor MI250
 - Intel is currently working on the _Falcon shores_ chips, which will have a 1500W/chip power consumption, a 67% increase if compared to Gaudi 3, which "only" consumes 900W.
 
@@ -52,7 +52,7 @@ AI already huge power consumption is estimated to grow 10 times by 2026, [surpas
 - According to a [2023 research study](https://arxiv.org/abs/2304.03271), AI is not only hungry for energy, it is also thirsty for water: water is one of the most used coolers for data centers, which makes it crucial to maintain them at an optimal performance status. This is even more important in hot areas like Arizona data centers, where temperatures reach high peaks during summer and water becomes scarce. The estimated water volumes needed by AI _per se_ in 2027 are 4.2 to 6.6 billion cubic meters, like the water consumption of the entire UK, and training GPT-3 alone in Microsoft SOTA data centers required 700.000 liters of fresh water.
 - In its 2024 environmental report, Google claimed that AI-driven energy requirements in data centers brought [their greenhouse gases emissions up by 48%](https://www.bbc.com/news/articles/c51yvz51k2xo)
 
-Summing everything up, AI is **growing fast**, hardware producers are making it **more and more power demanding**, big tech companies are pouring billions into **huge computational and data factories** to cope with the growth of the sector, and the resulting **impact** on the environment, both **direct and indirect**, is becoming more and more **relevant**. 
+Summing everything up, AI is **growing fast**, hardware producers are making it **more and more power demanding**, big tech companies are pouring billions into **huge computational and data factories** to cope with the growth of the sector, and the resulting **impact** on the environment, both **direct and indirect**, is becoming more and more **relevant**.
 
 ### Going nuclear: the solution?
 
@@ -82,21 +82,21 @@ So nuclear energy, although **not being renewable** (it depends on radioactive m
 
 **3. Small Modular Reactors**
 
-One potential solution to the problems that affect nuclear energy development are [Small Modular Reactors](https://www.energy.gov/ne/benefits-small-modular-reactors-smrs) (SMR) which are, as the name suggests, smaller implementations of the traditional power plants. 
+One potential solution to the problems that affect nuclear energy development are [Small Modular Reactors](https://www.energy.gov/ne/benefits-small-modular-reactors-smrs) (SMR) which are, as the name suggests, smaller implementations of the traditional power plants.
 
 - They are small and modular, so their modules can be pre-assembled in a factory and just combined into a reactors _in loco_, speeding up significantly the construction times and dramatically cutting the costs.
 - Their security is managed without complex systems: being small and not dealing with high quantities of energy, these reactors take advantage of naturally-occurring physical processes to safeguard the energy production
 - They have a good energy efficiency: even though they produce a third of the energy that generally a traditional reactor outputs, they can be coupled with renewable sources of energy to enhance their performances.
 
-Despite the obvious advantages, lots SMRs are still in the designing phase, and there is not enough evidence to assess their nuclear waste production: [a research by Standford and British Columbia University](https://news.stanford.edu/stories/2022/05/small-modular-reactors-produce-high-levels-nuclear-waste) suggests indeed that they would produce (in proportion) more waste than traditional reactors, compared to an energy production which still does not surpass the 300 MW/reactor. 
+Despite the obvious advantages, lots SMRs are still in the designing phase, and there is not enough evidence to assess their nuclear waste production: [a research by Standford and British Columbia University](https://news.stanford.edu/stories/2022/05/small-modular-reactors-produce-high-levels-nuclear-waste) suggests indeed that they would produce (in proportion) more waste than traditional reactors, compared to an energy production which still does not surpass the 300 MW/reactor.
 
-So this leads to our big question, but also conclusion: 
+So this leads to our big question, but also conclusion:
 
 **4. Why are Big Tech turning nuclear for AI?**
 
 As we saw, nuclear energy is highly efficient and, with technological advancements such as SMRs, is becoming more and more feasible and scalable. Apart from the nuclear waste problem (which can still constitute a big issue on the long run), nuclear energy is clean and carbon-free, so it does not contribute to the climate crisis. All of these reasons make it the perfect candidate to "clean" AI while yielding more power for it, even though some key points still remain unclear:
 
-- Big techs are pushing to build nuclear power but their energy requirements are way larger than what could be provided by those SMRs only: Google alone, according to its own environmental report, consumed 24 TWh of electricity in 2024, which means 24 millions MWh. The SMRs could contribute for a very small part, which probably will be piped straight into GenAI data centers and facilities, but they alone won't actually be able to satisfy the ever growing energy hunger of AI. 
+- Big techs are pushing to build nuclear power but their energy requirements are way larger than what could be provided by those SMRs only: Google alone, according to its own environmental report, consumed 24 TWh of electricity in 2024, which means 24 millions MWh. The SMRs could contribute for a very small part, which probably will be piped straight into GenAI data centers and facilities, but they alone won't actually be able to satisfy the ever growing energy hunger of AI.
 - These projects, even though planned on the short term (most of them will be carried out before 2035-2040), will take time, but the AI boom is happening now and the surging demand will be a problem way before 2035-2040: what will the strategy of the big techs be for the time being?
 - Besides investments in nuclear energy, big techs will need to give their money also to clean energy facilities. What they've been doing up to now, tho, has been acquiring Renewable Energy Credits (RECs) as a workaround: arguing that getting an entirely clean and green stream of renewable energy is almost impossible, tech giants just give money to developers that ensure that they'll use those investments to build new renewable energy infrastructures. Another widely used model are carbon credits (CCs), a financial instrument that allows a company to pay someone else to take action and reduce their carbon emissions. RECs and CCs combined are a cheap and easy way to claim environmental goals without actually having met them in practice: according to a [review by MIT](https://www.technologyreview.com/2024/07/17/1095019/google-amazon-and-the-problem-with-big-techs-climate-claims/), this strategy is widely used (Google, Amazon, Meta and Salesforce are just some examples) and often brings to no/scarce actual results in lowering a company's impact, despite the claims of carbon neutrality.
 - Electrical grids are becoming every day more stressed because of the needs for energy by data centers and computational facilities: how will they handle the incoming power that is being poured into them to feed the demand of AI?
@@ -105,5 +105,4 @@ So, in conclusion: are big techs really interested in the decarbonizing potentia
 
 ### References
 
-See the references for this article [here](https://raw.githubusercontent.com/AstraBert/hophop-science/master/images/references_2024_20_10.txt
-)
+See the references for this article [here](https://raw.githubusercontent.com/AstraBert/hophop-science/master/images/references_2024_20_10.txt)

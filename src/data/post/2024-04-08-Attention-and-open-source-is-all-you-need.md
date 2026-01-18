@@ -12,10 +12,9 @@ metadata:
   canonical: https://clelia.dev/blog/2024-04-08-Attention-and-open-source-is-all-you-need
 ---
 
-
 ## A topic of great impact
 
-In 2017, a paper titled [Attention is all you need](https://papers.nips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html) by eight Google researchers marked the first brick of the (maybe still not complete) house on which a big part of present-days AI is built. 
+In 2017, a paper titled [Attention is all you need](https://papers.nips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html) by eight Google researchers marked the first brick of the (maybe still not complete) house on which a big part of present-days AI is built.
 
 The concept introduced by Vaswani and colleagues, the _transformer_, became in recent years the base for the blossoming AI spring, and we will dive deeper in the architecture and in the applications of transformers in the upcoming weeks, in a series that we will entirely dedicate to that.
 
@@ -33,7 +32,7 @@ The huge training and maintenance costs forced big companies to partially or ful
 
 In spite of that, open-sourcedness should be a value that all AI companies want to pursue, in order to create a world of shared knowledge, open science and great educational opportunities.
 
-Just think about it: a world where the most powerful AI models are at a few clicks from teachers, students, even in the most remote areas, with scarce learning resources. A world where everyone can work less and boost their productivity thanks to AI optimization, where repeatitive and monotonous tasks are left to AI and we can enjoy more freedom and a better quality work-life balance. A world where AI can help us solve thed biggest challenges of climate change, health and politics. 
+Just think about it: a world where the most powerful AI models are at a few clicks from teachers, students, even in the most remote areas, with scarce learning resources. A world where everyone can work less and boost their productivity thanks to AI optimization, where repeatitive and monotonous tasks are left to AI and we can enjoy more freedom and a better quality work-life balance. A world where AI can help us solve thed biggest challenges of climate change, health and politics.
 
 As utopistic as it may sound, if we stick on keeping AI knowledge and power open source and easily accessible, maybe one day all of this won't be a mirage, but a solid reality.
 

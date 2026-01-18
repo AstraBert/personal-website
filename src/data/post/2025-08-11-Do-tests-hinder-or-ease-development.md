@@ -14,7 +14,7 @@ metadata:
 
 I was recently trying to add some changes to the TypeScript repository for LlamaIndex, and part of these changes involved migrating from legacy `zod` to `zod/v4`.
 
-I tried to change any part of the codebase that I thought was affected by the migration, and then the CI tests from GitHub Actions told me I missed some - so I proceeded to update also those. I was pretty much convinced I updated all affected code, but I was proven wrong: tests were still failing. Actually, a single test was failing. 
+I tried to change any part of the codebase that I thought was affected by the migration, and then the CI tests from GitHub Actions told me I missed some - so I proceeded to update also those. I was pretty much convinced I updated all affected code, but I was proven wrong: tests were still failing. Actually, a single test was failing.
 
 I took upon the test and tried to tweak the code in several different ways until I simply gave up: the code responsible for the tests failing depended on the legacy `zod` because it was used by a third-party package, and the dependency conflict was unsolvable.
 
@@ -28,15 +28,15 @@ When I started coding professionally, and my projects and my profile got some mo
 
 But what if those tests were really a blocking factor for my productivity? What if the time I spent writing tests I could've spent actually crafting new features for my products?
 
-On the other side, I still ask myself: what if those  features I could've added (instead of tests) broke my code, and that led to even more debugging and work to figure out what was wrong, while unit or integration tests could've told me from the very start?
+On the other side, I still ask myself: what if those features I could've added (instead of tests) broke my code, and that led to even more debugging and work to figure out what was wrong, while unit or integration tests could've told me from the very start?
 
 I can see the point of those who say that tests significantly slow down their flow, because they are simply too many or they take too long: it's obviously a blocker to have hundreds of unit tests when you need to ship fast - but I can also see that, in a fast-paced environment, it is rarely the case that you have hundreds of unit tests.
 
 After some thinking, I managed to get to a practical solution that I liked:
 
-1. when you have a small, modular and clean codebase, it is easy to add unit, integration and end-to-end tests that cover pretty much everything 
-2. If the project is small but growing quickly, not intended for production but for customer feedback and iteration, having a set of light integration tests and some e2e tests might be the best choice: in this sense, you could see how well a new functionality integrates with the project without having to update tenths of other tests 
-3. If you're building within a community or a team on a large and shared codebase, then being test-heavy is the only path to production: you cannot ship something that is broken, not even that small detail that you think nobody would care about. 
+1. when you have a small, modular and clean codebase, it is easy to add unit, integration and end-to-end tests that cover pretty much everything
+2. If the project is small but growing quickly, not intended for production but for customer feedback and iteration, having a set of light integration tests and some e2e tests might be the best choice: in this sense, you could see how well a new functionality integrates with the project without having to update tenths of other tests
+3. If you're building within a community or a team on a large and shared codebase, then being test-heavy is the only path to production: you cannot ship something that is broken, not even that small detail that you think nobody would care about.
 
 Oftentimes point (1) and (2) bring to point (3) in the end: everyone starts small, iterates and then gets to bigger, production-grade projects.
 

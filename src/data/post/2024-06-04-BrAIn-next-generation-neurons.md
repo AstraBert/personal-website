@@ -20,16 +20,16 @@ I bet that everyone can somewhat grasp the idea behind the title, but it is wort
 
 ## Biological concepts
 
-- **Neuron**: Neurons are the building blocks of a brain. They are small cells with a round central body called _soma_, where all the biological activity is carried out, some input branched-like structures (the _dendrites_), that receive signals from neighbor neurons, and an output wire-like _axon_, along which the bioelectric signal is conducted. 
+- **Neuron**: Neurons are the building blocks of a brain. They are small cells with a round central body called _soma_, where all the biological activity is carried out, some input branched-like structures (the _dendrites_), that receive signals from neighbor neurons, and an output wire-like _axon_, along which the bioelectric signal is conducted.
 - **Synapsis**: As the Greek etymology underlines, synapses are "points of contact": the end of the axon is indeed enlarged into a "synaptic button", from which neurotransmitters are released following a bioelectrical signal. On the other end, there is a dendrite which, despite not touching the synaptic button, is really close to it, separated only but what is called the "synaptic slit": it receives the neurotransmitter, evoking a bioelectrical response
 - **Action potential**: Neurons transmit their bioelectric signals through an all-or-nothing event, known as _action potential_. The action potential originates in the point where the axon emerges from the soma, known as _axon hillock_, because of a series of ionic exchanges across the neural membrane. When the axon hillock reaches a voltage threshold, the neuron fires, and the shape of the electric signal curve is always the same: what determines the differences among sensations, emotions and memories is the _frequency_ of the firing. The action potential is transmitted along the axon, and the regions which were surpassed by the signal become refractory to other stimulation for a short time, ensuring a one-way transmission of the action potential (from axon hillock to dendrites).
-- **Synaptic plasticity**: this phenomenon encompasses modifications of the quantity of released neurotransmitters, number of receptors... which are performed on a synapsis to reinforce or weaken it, based on how much and how well it is used. 
+- **Synaptic plasticity**: this phenomenon encompasses modifications of the quantity of released neurotransmitters, number of receptors... which are performed on a synapsis to reinforce or weaken it, based on how much and how well it is used.
 - **Neuroplasticity**: Neuroplasticity is the phenomenon through which brain neurons rearrange to optimize the way they respond to external stimuli.
 - **Organoid**: An organoid is an arrangement of living cells into complex structures which mimic the functioning of an organ. They are used for simulations and experiments.
 
 ## Explaining the breakthrough
 
-Now that we have all the concepts we need, let's dive into understanding what happened in the paper we mentioned in the first paragraph, and in general what is going on in the field. 
+Now that we have all the concepts we need, let's dive into understanding what happened in the paper we mentioned in the first paragraph, and in general what is going on in the field.
 
 ### 1. The core: organoid intelligence
 
@@ -37,7 +37,7 @@ _Organoid Intelligence_ (OI) is a dynamic and growing field in bio-computing, wh
 
 ### 2. The findings: speech recognition and comparison with ANNs
 
-In "Brain organoid reservoir computing for artificial intelligence", the team behind the paper built a small brain organoid, loaded onto a multielectrode array (MAE) chip. 
+In "Brain organoid reservoir computing for artificial intelligence", the team behind the paper built a small brain organoid, loaded onto a multielectrode array (MAE) chip.
 
 The organoid was trained to recognized the speech of 8 people with 240 recordings, showing different neural patterns of activation when different people were speaking and achieving a 78% accuracy in recognizing them. This may sound pretty unsurprising, unless you consider the size of the training dataset: 240 recordings are a really small-sized set of data, considered that AI algorithms would need thousands of examples to achieve similar accuracy scores.
 
@@ -53,13 +53,13 @@ There are big advantages linked to OI:
 
 Despite the promising perspectives, there are still some obstacles we need to overcome:
 
-- Current organoids are scarcely persistent, we need something more durable and reliable 
+- Current organoids are scarcely persistent, we need something more durable and reliable
 - We need to adapt machine-brain interfaces to smoother and more biological-friendly structure, in order to seamlessly connect and tune brain input/outputs with external machines.
 - We have to scale up our algorithms and models to handle the huge volume of data that organoids will be able to manage
 
 ## Conclusion
 
-Organoid Intelligence is undoubtedly the forefront of biocomputing, which will be able to revolutionize the way we understand and (probably) even think of our brain, unlocking novel and unexpected discoveries on how we learn notions and shape our memory. On the other hand, it will provide a powerful hardware, which will capture huge conceptual, computational and representational power in small brain-like engines, reducing learning times and expenses for our new AI models. All of this, obviously, is subjected to the condition that we invest resources and time in building new organoids, algorithms and data facilities: the future of _brAIn_ is close, we just need to put some effort to reach it. 
+Organoid Intelligence is undoubtedly the forefront of biocomputing, which will be able to revolutionize the way we understand and (probably) even think of our brain, unlocking novel and unexpected discoveries on how we learn notions and shape our memory. On the other hand, it will provide a powerful hardware, which will capture huge conceptual, computational and representational power in small brain-like engines, reducing learning times and expenses for our new AI models. All of this, obviously, is subjected to the condition that we invest resources and time in building new organoids, algorithms and data facilities: the future of _brAIn_ is close, we just need to put some effort to reach it.
 
 ## References
 

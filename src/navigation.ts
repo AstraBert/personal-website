@@ -39,8 +39,16 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/itsclelia' },
-    { ariaLabel: 'BlueSky', icon: 'tabler:brand-bluesky', href: 'https://bsky.app/profile/cle-does-things.bsky.social' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/clelia-astra-bertelli-583904297/' },
+    {
+      ariaLabel: 'BlueSky',
+      icon: 'tabler:brand-bluesky',
+      href: 'https://bsky.app/profile/cle-does-things.bsky.social',
+    },
+    {
+      ariaLabel: 'LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      href: 'https://www.linkedin.com/in/clelia-astra-bertelli-583904297/',
+    },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/AstraBert/' },
   ],

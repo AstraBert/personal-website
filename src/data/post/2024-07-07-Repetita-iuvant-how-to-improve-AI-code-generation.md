@@ -31,7 +31,7 @@ The two great advantages of using CodeContest dataset are:
 
 ### 0b. Competitor models
 
-Other models or flows addressed the challenge of smoothing complex reasoning in code generation; the two explicitly mentioned in Codium-AI's paper are: 
+Other models or flows addressed the challenge of smoothing complex reasoning in code generation; the two explicitly mentioned in Codium-AI's paper are:
 
 - _AlphaCode_ by Google Deepmind was finetuned specifically on CodeContest: it produces millions of solutions, of which progressively smaller portions get selected based on how well they fit the problem representation. In the end, only 1-10 solutions are retained. Even though it had impressive results at the time, the computational burden makes this an unsuitable solution for everyday users.
 - _CodeChain_ by Le et al. (2023) had the aim to enhance modular code generation capacity, to make the outputs more similar to the ones skilled developers would produce. This is achieved through a chain of self-revisions, guided by previously produced snippets.
@@ -45,7 +45,7 @@ Spoiler: neither of them proves as good as AlphaCodium on the reported benchmark
 As you can see in the image at the beginning of this article, AlphaCodium's workflow is divided in two portions. The first one encompasses thought processes in which mostly natural language is involved, hence we could call it the _Natural Language Reasoning (NLR)_ phase.
 
 1. We start with a prompt that contains both the problem and the public tests
-2. We proceed to ask the LLM to "reason out loud" on the problem 
+2. We proceed to ask the LLM to "reason out loud" on the problem
 3. The same reasoning procedure goes for the public tests
 4. After having produced some thoughts on the problem, the model outputs a first batch of potential solutions
 5. The LLM is then asked to rank these solutions according to their suitability for problem and public tests
@@ -53,15 +53,15 @@ As you can see in the image at the beginning of this article, AlphaCodium's work
 
 ### 1b. Coding test iterations
 
-The second portion includes actual code execution and evaluation with public and AI-generated tests: 
+The second portion includes actual code execution and evaluation with public and AI-generated tests:
 
 1. We make sure that the initial code solution works without bugs: if not, we regenerate it until we either reach a maximum iteration limit or produce an apparently zero-bug solution
 2. Public tests are then taken over by the model's code: we search for the solution that maximizes passes over fails over several iteration rounds; this solution is passed over to the AI tests
 3. The last step is to test the code against AI-generated input/outputs: the solution that best fits them is returned as the final one, and will be evaluated with private tests.
 
-This second portion may leave us with some questions, such as: what if the model did not understand the problem and produced wrong tests? How do we prevent the degeneration of code if there are corrupted AI-generated tests? 
+This second portion may leave us with some questions, such as: what if the model did not understand the problem and produced wrong tests? How do we prevent the degeneration of code if there are corrupted AI-generated tests?
 
-These questions will be addressed in the next section. 
+These questions will be addressed in the next section.
 
 ## 2. Performance-enhancing solutions
 
@@ -94,7 +94,7 @@ AlphaCodium's workflow represent a reliable and solid way to enhance models perf
 
 This flow is simple to understand, involves 4 orders of magnitude less LLM calls than AlphaCode and can provide a fast and trustable solution even to non-professional coders.
 
-The question that remains is: what are we gonna do with all this future? Are we going to invest in more and more data and training to build better coding models? Will we rely on fine-tuning or monosemanticy properties of LLMs to enhance their performances on certain downstream tasks? Or are we going to develop better and better workflows to improve base, non-finetuned models? 
+The question that remains is: what are we gonna do with all this future? Are we going to invest in more and more data and training to build better coding models? Will we rely on fine-tuning or monosemanticy properties of LLMs to enhance their performances on certain downstream tasks? Or are we going to develop better and better workflows to improve base, non-finetuned models?
 
 There's no simple answer: we'll see what the future will bring to us (or, maybe, what we will bring to the future).
 

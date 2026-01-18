@@ -18,16 +18,16 @@ metadata:
 
 Large Language Models (LLMs) have revolutionized our everyday life since the launch of ChatGPT in november 2022: OpenAI's LLM-powered chat application gained one million users in 5 days and, in October 2024, after almost two years from each launch, reached [3.7 billions of visit in a single month](https://explodingtopics.com/blog/chatgpt-users), putting it 11th on the shortlists of the [most visited websites](https://explodingtopics.com/blog/most-visited-websites).
 
-This broad adoption of text-generating Artificial Intelligence (AI) is also reflected in the skyrocketing number of LLM releases by numerous companies: while OpenAI, Anthropic or other big AI companies build mostly closed-source products, these new models, available mainly on [HuggingFace Hub](https://huggingface.co/models), are mostly open-weight or open-source (for an explanation of the difference see [this article](https://www.agora.software/en/llm-open-source-open-weight-or-proprietary/)). Leading the open AI revolution are companies like Meta, Qwen (by Alibaba), Huggingface (HF), Microsoft and many others. 
+This broad adoption of text-generating Artificial Intelligence (AI) is also reflected in the skyrocketing number of LLM releases by numerous companies: while OpenAI, Anthropic or other big AI companies build mostly closed-source products, these new models, available mainly on [HuggingFace Hub](https://huggingface.co/models), are mostly open-weight or open-source (for an explanation of the difference see [this article](https://www.agora.software/en/llm-open-source-open-weight-or-proprietary/)). Leading the open AI revolution are companies like Meta, Qwen (by Alibaba), Huggingface (HF), Microsoft and many others.
 
-Open models are progressively getting closer in performance to their closed-source counterparts, matching them in many tasks like coding or, with the latest releases, reasoning. 
+Open models are progressively getting closer in performance to their closed-source counterparts, matching them in many tasks like coding or, with the latest releases, reasoning.
 
-With open LLMs becoming better at complex jobs, one of the fields they can be tested on is *debating*. There has been some research already on the topic, whose most relevant contributions can be summarized with:
+With open LLMs becoming better at complex jobs, one of the fields they can be tested on is _debating_. There has been some research already on the topic, whose most relevant contributions can be summarized with:
 
 - Agent4Debate ([Zhang et al., 2024](https://arxiv.org/abs/2408.04472)): a collaborative framework leveraging a Searcher, an Analyzer, a Writer and a Reviewer to mimic human behavior for debate preparation and execution. Evaluated against human and other baseline models, Agent4Debate demonstrated human-comparable capabilities
 - Debatrix ([Liang et al., 2024](https://arxiv.org/abs/2403.08010)): a comprehensive LLM judge for multi-turn debate settings
 - Debates used to evaluate the performance of LLMs ([Moniri et al., 2024](https://arxiv.org/abs/2406.11044)): an automated evaluation framework based on debates among LLMs which are judged by another LLM. This helps in scaling the benchmarking of Language models outside domain-specific knowledge or fixed test sets
-- DebateBrawl ([Aryan, 2024](https://arxiv.org/abs/2412.06229)): a platform that, integrating genetic algorithms and game theory strategies with LLM reasoning and text generation capabilities, provides the users with an interactive debate experience by crafting coherent and poignant arguments. 
+- DebateBrawl ([Aryan, 2024](https://arxiv.org/abs/2412.06229)): a platform that, integrating genetic algorithms and game theory strategies with LLM reasoning and text generation capabilities, provides the users with an interactive debate experience by crafting coherent and poignant arguments.
 
 In this blog post, we will propose a Debate Championship among five state-of-the-art open models available through [HuggingFace Inference API](https://huggingface.co/docs/api-inference/index).
 
@@ -35,11 +35,11 @@ In this blog post, we will propose a Debate Championship among five state-of-the
 
 ### 2a. General Structure of the Tournament
 
-The tournament is structured with the so called "Italian" formula, meaning that all participants play with all the others. There is no "home and away games" schema: every participant plays with each of the other ones only once. A model earns one point by winning a game, whereas it does not earn any (but it does not lose any as well) when losing a game.  
+The tournament is structured with the so called "Italian" formula, meaning that all participants play with all the others. There is no "home and away games" schema: every participant plays with each of the other ones only once. A model earns one point by winning a game, whereas it does not earn any (but it does not lose any as well) when losing a game.
 
 Each tournament round is one-shot, meaning that each participant has only one possibility to generate a 150-250 words argument, that will be then judged by an external LLM.
 
-This first tournament consists of 5 LLMs as *debaters*:
+This first tournament consists of 5 LLMs as _debaters_:
 
 - [`meta-llama/Llama-3.1-8B-Instruct`](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct)
 - [`Qwen/Qwen2.5-72B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct)
@@ -47,7 +47,7 @@ This first tournament consists of 5 LLMs as *debaters*:
 - [`HuggingFaceH4/starchat2-15b-v0.1`](https://huggingface.co/HuggingFaceH4/starchat2-15b-v0.1)
 - [`mistralai/Mistral-7B-Instruct-v0.3`](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
 
-And two as *judges*:
+And two as _judges_:
 
 - [`Qwen/QwQ-32B-Preview`](https://huggingface.co/Qwen/QwQ-32B-Preview)
 - [`meta-llama/Llama-3.3-70B-Instruct`](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct)
@@ -56,7 +56,7 @@ And two as *judges*:
 
 > _Code reference: [DebateChampionshipLLMs.ipynb](https://github.com/AstraBert/DebateLLM-Championship/blob/main/DebateChampionshipLLMs.ipynb)_
 
-The motions which were used to prompt the debate matches were extracted from [`kokhayas/english-debate-motions-utds`](https://huggingface.co/datasets/kokhayas/english-debate-motions-utds) dataset on HuggingFace. 
+The motions which were used to prompt the debate matches were extracted from [`kokhayas/english-debate-motions-utds`](https://huggingface.co/datasets/kokhayas/english-debate-motions-utds) dataset on HuggingFace.
 
 1,000 of them were then randomly sampled from the 10,000+ set of motions contained in the original dataset, and a random motion was selected for each debate round.
 
@@ -66,7 +66,7 @@ from datasets import load_dataset
 # download the dataset from HF hub
 dts = load_dataset("kokhayas/english-debate-motions-utds")
 dtsdct = dts["train"]
-     
+
 import random as r
 
 # sample 1000 motions from the original dataset
@@ -95,11 +95,11 @@ We approached building the tournament by:
 
 - decomposing it into its atomic parts, the "building blocks" (defining how debaters and judges generate their answers)
 - scaling to creating the structure of one round (debater 1 -> debater 2 -> judge)
-- defining the entire tournament as a loop of rounds, with debate data collection and points tracking (for the final ranking) 
+- defining the entire tournament as a loop of rounds, with debate data collection and points tracking (for the final ranking)
 
 The code to create the building blocks of the debate tournament is the following:
 
-```python
+````python
 from huggingface_hub import InferenceClient
 from google.colab import userdata
 
@@ -148,15 +148,15 @@ def tournament_round(model1, model2, judge, motion):
   essay2 = debate_inference(model2, prompt2)
   winner_answer = judge_inference(judge, motion, essay1, essay2)
   return essay1, essay2, winner_answer
-```
+````
 
 For the tournament itself to be run, we add the following features to the backbone structure:
 
 - Point tracking
 - Debate data collection
-- *winner* and *reasons for winner's choice* extraction from the judge's answer
+- _winner_ and _reasons for winner's choice_ extraction from the judge's answer
 
-The last point is especially painful, since the judge's answer can come in various formats even if the system instructions are very clear on how to structure it, so we decided to tackle the challenge posed by the variability of the output by adding a *output parser* LLM. This output parser LLM is `gpt-4o-mini`, that is wrapped into Langchain OpenAI chat class (`ChatOpenaAI`), and linked to a Pydantic schema for structured output generation:
+The last point is especially painful, since the judge's answer can come in various formats even if the system instructions are very clear on how to structure it, so we decided to tackle the challenge posed by the variability of the output by adding a _output parser_ LLM. This output parser LLM is `gpt-4o-mini`, that is wrapped into Langchain OpenAI chat class (`ChatOpenaAI`), and linked to a Pydantic schema for structured output generation:
 
 ```python
 from google.colab import userdata
@@ -193,7 +193,7 @@ class Verdict(BaseModel):
     winner: str = Field(description="The winner, as reported by the verdict")
     reasons: str = Field(description="Reasons for the choice of the winner")
 
-# define an inference-ready system instructions+LLM+structured output parser 
+# define an inference-ready system instructions+LLM+structured output parser
 chain = system_prompt | llm.with_structured_output(Verdict)
 ```
 
@@ -238,14 +238,13 @@ for judge in judges:
         winner_model = favoragainst[winner.lower()]
         motions2args2winner2reasons["winner"].append(winner_model)
         motions2args2winner2reasons["reasons"].append(reasons)
-        # add a point to the winner model 
+        # add a point to the winner model
         modelpoints[judge][winner_model] += 1
         print(f"Done with match: {judge_counter}.{counter}")
   print("Done with " + judge + " being a judge")
 ```
 
-The collected data were manually annotated ([_Code reference_]()), saved to a CSV file and uploaded as [a dataset on HuggingFace hub](https://huggingface.co/datasets/as-cle-bert/DebateLLMs). 
-
+The collected data were manually annotated ([_Code reference_]()), saved to a CSV file and uploaded as [a dataset on HuggingFace hub](https://huggingface.co/datasets/as-cle-bert/DebateLLMs).
 
 ### 2d. Post-Tournament Analysis
 
@@ -255,8 +254,8 @@ Post-tournament analysis involved:
 
 1. Analyzing words in motions and winning arguments when `QwQ-32B-Preview` was a judge
 2. Repeating the same analysis at 1. with `Llama-3.3-70B-Instruct` as a judge
-3. Repeating the same analysis at 1. with `Phi-3.5-mini-instruct` winning arguments 
-4. Repeating the same analysis at 1. with with `HuggingFaceH4/starchat2-15b-v0.1` losing arguments 
+3. Repeating the same analysis at 1. with `Phi-3.5-mini-instruct` winning arguments
+4. Repeating the same analysis at 1. with with `HuggingFaceH4/starchat2-15b-v0.1` losing arguments
 
 We also carried out topic association analysis for winning arguments with `QwQ-32B-Preview` and `Llama-3.3-70B-Instruct` as judges, as well as the same analysis for `Phi-3.5-mini-instruct` winning arguments and `HuggingFaceH4/starchat2-15b-v0.1` losing arguments.
 
@@ -404,7 +403,7 @@ The tournament was won by `Phi-3.5-mini-instruct`, with 5 overall victories and 
 
 It was followed, in the second place, by `Mistral-7B-Instruct-v0.3` (4 victories, winner of the tournament batch in which `QwQ-32B-Preview` was judge), `Llama-3.1-8B-Instruct` (4 overall victories) and `Qwen2.5-72B-Instruct` (4 overall victories).
 
-In the third position we had `starchat2-15b-v0.1`, with 2 overall victories. 
+In the third position we had `starchat2-15b-v0.1`, with 2 overall victories.
 
 ### 3b. Favor and Against Winning Cases Distribution
 
@@ -447,8 +446,7 @@ _**Fig 2d**: Overlapping scores between the keywords in the motions and the keyw
 
 > **TAKEAWAY**: _Although results do not converge onto a single explanation, we could say that a high overlap score does not necessary help in winning, but that a low overlap score may have an influence on losing the match_
 
-We also evaluated the correlation among argument length (in words) and keyword overlapping score: while for overall winning arguments with both `QwQ-32B-Preview` and `Llama-3.3-70B-Instruct` as judges there is no significant correlation, Fig 3a-b highlight that there is a stronger positive correlation for `Phi-3.5-mini-instruct` winning argument and a stronger negative correlation for `starchat2-15b-v0.1` losing arguments. 
-
+We also evaluated the correlation among argument length (in words) and keyword overlapping score: while for overall winning arguments with both `QwQ-32B-Preview` and `Llama-3.3-70B-Instruct` as judges there is no significant correlation, Fig 3a-b highlight that there is a stronger positive correlation for `Phi-3.5-mini-instruct` winning argument and a stronger negative correlation for `starchat2-15b-v0.1` losing arguments.
 
 ![_config.yml]({{ site.baseurl }}/images/phi3-winning-corr.png)
 
@@ -468,31 +466,30 @@ We lastly evaluated what positions ("Favor" or "Against") were deemed winning in
 
 First of all, we accounted for potential "personal opinion" influence (i.e. a bias in the LLM) in the choice of the winner, using `gpt-4o-mini` to detect these biases and report them along with the expressions that contained "personal opinions" from the judge. We then build Table 1:
 
-| Judge | Topic | Position | Influenced | Quotes |
-|--------|--------|-----------|------------|---------|
-| Qwen/QwQ-32B-Preview | Prisoners Extradition | Against | False | |
-| Qwen/QwQ-32B-Preview | Oppose Chinese censorship | Favor | True | The argument in favor is stronger because it emphasizes human rights, freedom of expression, and the need for a balanced approach to social stability. It aligns with international standards and promotes a more inclusive society. |
-| Qwen/QwQ-32B-Preview | Democratization of UN | Favor | False | |
-| Qwen/QwQ-32B-Preview | Non-violent movements not leading social change | Against | False | |
-| Qwen/QwQ-32B-Preview | West funding a coup in Myanmar | Against | False | |
-| Qwen/QwQ-32B-Preview | Stop to Bullfighting | Favor | True | The argument in favor of banning bullfighting is stronger due to its emphasis on ethical considerations. |
-| Qwen/QwQ-32B-Preview | Paper is better than Internet | Against | False | |
-| Qwen/QwQ-32B-Preview | Ban to self-diagnose websites | Favor | True | The potential for misdiagnosis and delayed treatment poses significant risks to public health. Privacy concerns further underscore the need for regulation or prohibition of these websites to ensure that individuals receive accurate and safe healthcare information and treatment. |
-| Qwen/QwQ-32B-Preview | Public workers have right to strike | Against | False | |
-| Qwen/QwQ-32B-Preview | Hedge funds not purchasing sovereign debt | Favor | False | |
-| meta-llama/Llama-3.3-70B-Instruct | Trade Unions slow progress | Favor | False | |
-| meta-llama/Llama-3.3-70B-Instruct | Cancel 3rd World Debt | Favor | False | |
-| meta-llama/Llama-3.3-70B-Instruct | Deny terminally ill patients cures | Against | True | the argument in favor was unable to present a coherent or convincing case. |
-| meta-llama/Llama-3.3-70B-Instruct | Prioritized skilled refugees to enter EU | Against | True | a humanitarian-focused approach is more aligned with principles of fairness and equality |
-| meta-llama/Llama-3.3-70B-Instruct | Repatriate North Korean refugees | Against | True | the moral and legal imperative to protect refugees' lives and freedoms takes precedence. |
-| meta-llama/Llama-3.3-70B-Instruct | Not replace workers with technology | Favor | False | |
-| meta-llama/Llama-3.3-70B-Instruct | Two parliaments: politicians and experts | Favor | True | The argument in favor presents a more compelling case the benefits of integrating experts into the legislative process seem to outweigh the drawbacks. |
-| meta-llama/Llama-3.3-70B-Instruct | Handmade gifts better than brand gifts | Favor | True | The argument in favor presented a more compelling case highlighting the emotional value, personalization, and shared experiences that handmade gifts offer, which outweigh the potential drawbacks mentioned by the argument against. |
-| meta-llama/Llama-3.3-70B-Instruct | Do not entrap pedophiles | Favor | False | |
-| meta-llama/Llama-3.3-70B-Instruct | Home-country trials for Guantanamo detainees | Favor | False | |
+| Judge                             | Topic                                           | Position | Influenced | Quotes                                                                                                                                                                                                                                                                                 |
+| --------------------------------- | ----------------------------------------------- | -------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Qwen/QwQ-32B-Preview              | Prisoners Extradition                           | Against  | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | Oppose Chinese censorship                       | Favor    | True       | The argument in favor is stronger because it emphasizes human rights, freedom of expression, and the need for a balanced approach to social stability. It aligns with international standards and promotes a more inclusive society.                                                   |
+| Qwen/QwQ-32B-Preview              | Democratization of UN                           | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | Non-violent movements not leading social change | Against  | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | West funding a coup in Myanmar                  | Against  | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | Stop to Bullfighting                            | Favor    | True       | The argument in favor of banning bullfighting is stronger due to its emphasis on ethical considerations.                                                                                                                                                                               |
+| Qwen/QwQ-32B-Preview              | Paper is better than Internet                   | Against  | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | Ban to self-diagnose websites                   | Favor    | True       | The potential for misdiagnosis and delayed treatment poses significant risks to public health. Privacy concerns further underscore the need for regulation or prohibition of these websites to ensure that individuals receive accurate and safe healthcare information and treatment. |
+| Qwen/QwQ-32B-Preview              | Public workers have right to strike             | Against  | False      |                                                                                                                                                                                                                                                                                        |
+| Qwen/QwQ-32B-Preview              | Hedge funds not purchasing sovereign debt       | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| meta-llama/Llama-3.3-70B-Instruct | Trade Unions slow progress                      | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| meta-llama/Llama-3.3-70B-Instruct | Cancel 3rd World Debt                           | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| meta-llama/Llama-3.3-70B-Instruct | Deny terminally ill patients cures              | Against  | True       | the argument in favor was unable to present a coherent or convincing case.                                                                                                                                                                                                             |
+| meta-llama/Llama-3.3-70B-Instruct | Prioritized skilled refugees to enter EU        | Against  | True       | a humanitarian-focused approach is more aligned with principles of fairness and equality                                                                                                                                                                                               |
+| meta-llama/Llama-3.3-70B-Instruct | Repatriate North Korean refugees                | Against  | True       | the moral and legal imperative to protect refugees' lives and freedoms takes precedence.                                                                                                                                                                                               |
+| meta-llama/Llama-3.3-70B-Instruct | Not replace workers with technology             | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| meta-llama/Llama-3.3-70B-Instruct | Two parliaments: politicians and experts        | Favor    | True       | The argument in favor presents a more compelling case the benefits of integrating experts into the legislative process seem to outweigh the drawbacks.                                                                                                                                 |
+| meta-llama/Llama-3.3-70B-Instruct | Handmade gifts better than brand gifts          | Favor    | True       | The argument in favor presented a more compelling case highlighting the emotional value, personalization, and shared experiences that handmade gifts offer, which outweigh the potential drawbacks mentioned by the argument against.                                                  |
+| meta-llama/Llama-3.3-70B-Instruct | Do not entrap pedophiles                        | Favor    | False      |                                                                                                                                                                                                                                                                                        |
+| meta-llama/Llama-3.3-70B-Instruct | Home-country trials for Guantanamo detainees    | Favor    | False      |                                                                                                                                                                                                                                                                                        |
 
 _**Table 1**: Potential influence of judge's "personal opinion" in choosing the winner_
-
 
 Table 1 highlights that `QwQ-32B-Preview` showed "personal opinion" influence in 30% of the cases, whereas `Llama-3.3-70B-Instruct` in 50% of them: the difference might rely in the intrinsic reasoning structure that `QwQ-32B-Preview` has, which might help avoiding bias-fed pitfalls in the judgement.
 
@@ -502,26 +499,23 @@ From Table 1 we can also see that both judges choose winning positions (except i
 
 _**Fig 4**: Political compass of the three evaluated LLMs_
 
-
 The political compass gives insight on left-leaning, libertarian positions for the three evaluated LLMs: this might mean that the judges positions in the choice of the were influenced by an internal political bias. The intrinsic political leaning of the models may have influenced also the winning chances for `Phi-3.5-mini-instruct` and `starchat2-15b-v0.1` (Table 2):
 
-| Model                               | Position   | Topics                                                                                                   |
-|-------------------------------------|------------|----------------------------------------------------------------------------------------------------------|
-| microsoft/Phi-3.5-mini-instruct   (winning)  | Against    | West funding a coup in Myanmar, Repatriate North Korean refugees                                         |
-| microsoft/Phi-3.5-mini-instruct  (winning)   | Favor      | Ban to self-diagnose websites, Handmade gifts better than brand gifts, Do not entrap pedophiles         |
-| HuggingFaceH4/starchat2-15b-v0.1  (losing)  | Against    | Democratization of UN, Stop to Bullfighting, Ban to self-diagnose websites, Not replace workers with technology, Handmade gifts better than brand gifts |
-| HuggingFaceH4/starchat2-15b-v0.1  (losing)  | Favor      | None                                                                                                    |
+| Model                                     | Position | Topics                                                                                                                                                  |
+| ----------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| microsoft/Phi-3.5-mini-instruct (winning) | Against  | West funding a coup in Myanmar, Repatriate North Korean refugees                                                                                        |
+| microsoft/Phi-3.5-mini-instruct (winning) | Favor    | Ban to self-diagnose websites, Handmade gifts better than brand gifts, Do not entrap pedophiles                                                         |
+| HuggingFaceH4/starchat2-15b-v0.1 (losing) | Against  | Democratization of UN, Stop to Bullfighting, Ban to self-diagnose websites, Not replace workers with technology, Handmade gifts better than brand gifts |
+| HuggingFaceH4/starchat2-15b-v0.1 (losing) | Favor    | None                                                                                                                                                    |
 
-
-As you can see, `starchat2-15b-v0.1` needed to defend the position _against_ several issues that are generally supported by liberal/left-wing political views: in this sense, the model might have hard a hard time generating a valid argument. 
+As you can see, `starchat2-15b-v0.1` needed to defend the position _against_ several issues that are generally supported by liberal/left-wing political views: in this sense, the model might have hard a hard time generating a valid argument.
 
 On the other side, all the positions that `Phi-3.5-mini-instruct` had to defend were aligned with its political views, making it easier for thr LLM to generate convincing and winning arguments.
 
 > **TAKEAWAY**: _There might be a correlation between the political leanings of the LLMs and their preferences in winner choice/ability to generate convincing arguments_
- 
 
 ## 4. Data and Code Availability
 
 The code is available for reproduction as [AstraBert/DebateLLM-Championship](https://github.com/AstraBert/DebateLLM-Championship) GitHub repo. The code is structured as three Google Colab notebooks that execute the code reported in this blog post.
 
-The collected debate data are available as [as-cle-bert/DebateLLMs](https://huggingface.co/datasets/as-cle-bert/DebateLLMs) on HuggingFace Hub. 
+The collected debate data are available as [as-cle-bert/DebateLLMs](https://huggingface.co/datasets/as-cle-bert/DebateLLMs) on HuggingFace Hub.

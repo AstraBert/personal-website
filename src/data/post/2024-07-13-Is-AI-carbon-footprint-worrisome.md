@@ -12,7 +12,6 @@ metadata:
   canonical: https://clelia.dev/blog/2024-07-13-Is-AI-carbon-footprint-worrisome
 ---
 
-
 ## 0. Before we start: a little bit of terminology
 
 We need to introduce three main terms, that we'll be using throughout the article and that will be a useful common ground to agree on:
@@ -21,7 +20,7 @@ We need to introduce three main terms, that we'll be using throughout the articl
 - CO2e (equivalent CO2): the [European Commission](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Carbon_dioxide_equivalent) writes that it is "a metric measure used to compare the emissions from various greenhouse gases on the basis of their global-warming potential (GWP), by converting amounts of other gases to the equivalent amount of carbon dioxide with the same global warming potential". This simply means that there are lots of other greenhouse gases (methane, clorofluorocarbons, nitric oxide...) which all have global warming potential: despite our emissions being mainly made up by CO2, they encompass also these other gases, and it is easier for us to express everything in terms of CO2. For example: methane has 25 times higher global warming power than CO2, which means that producing 1 kg of methane can be translated into producing 25 kg of CO2e.
 - Life cycle assessment (LCA): following [European Environmental Agency](https://www.eea.europa.eu/help/glossary/eea-glossary/life-cycle-assessment) glossary, LCA "is a process of evaluating the effects that a product has on the environment over the entire period of its life thereby increasing resource-use efficiency and decreasing liabilities". We can use this technique to trace the impact of an object (or sometimes a service) from start to end, understanding the energetic consumptions associated with its production, use and disposal.
 
-These three definitions come with a disclaimer (especially for the first and last one): not everybody in the scientific community believes they are correct, and there are several other possibilities to define these concepts. What is interesting to us in this article is to grasp an operative knowledge, that will allow the understanding of facts and figures about AI impact on the environment: we won't, thus, dive into scientific terminological disputes.  
+These three definitions come with a disclaimer (especially for the first and last one): not everybody in the scientific community believes they are correct, and there are several other possibilities to define these concepts. What is interesting to us in this article is to grasp an operative knowledge, that will allow the understanding of facts and figures about AI impact on the environment: we won't, thus, dive into scientific terminological disputes.
 
 ## 1. AI impact on the environment: a troubled story
 
@@ -29,7 +28,7 @@ There is a great problem about AI carbon footprint: we know very little about it
 
 Let's, nevertheless, try to look at some estimates, following a paper (_Sustainable AI: Environmental Implications, Challenges And Opportunities_) coming out of the 5th MLSys Conference, held in Santa Clara in 2022. The main idea behind the proposed analysis is to follow AI consumptions end-to-end, from hardware production to usage to deployment, in what the authors define as a "holistic approach":
 
-- _Hardware production, usage, maintenance and recycling_: this portion is based on a thorough LCA for processors and other hardware facilities: the conclusion seems to point to a 30/70% split between hardware (or embodied) and computational (or operational) carbon footprint. 
+- _Hardware production, usage, maintenance and recycling_: this portion is based on a thorough LCA for processors and other hardware facilities: the conclusion seems to point to a 30/70% split between hardware (or embodied) and computational (or operational) carbon footprint.
 - _Researching, experimenting and training_: although researching and experimenting could take long times and relevant computational efforts, these two portions are not nearly as heavy as training in terms of carbon footprint. A model like GPT-3, which we deem as surpassed nowadays, required >600.000 kg of CO2e: considered that the average world carbon footprint per person is about 4000 kg/year, we can say that GPT-3 had as much impact as 150 people in one year. Moreover, you have to consider that there is not only "offline" training (the one done with historical data), but there's also "online" training, the one that keeps models up-to-date with recently published content: this portion, for example, is particularly relevant to recommendations models such as Meta's RM1-5.
 - _Inference_: Inference may be the most relevant portion in terms of carbon costs: as Philip Lewer (Untether AI) says, "models are built expressly for the purpose of inference, and thus run substantially more frequently in inference mode than training mode — in essence train once, run everywhere" (from [this article](https://semiengineering.com/ai-power-consumption-exploding/)). According to researchers from MIT and Northeastern University, "different estimates from NVIDIA and Amazon suggest that inference tasks account for 80% or more of AI computational demand" (MacDonald et al., 2022). Also for a model like RM1 at Meta inference almost doubles the carbon costs already produced by offline and online training.
 
@@ -37,10 +36,9 @@ Let's, nevertheless, try to look at some estimates, following a paper (_Sustaina
 
 If all of these aspects account for a relevant portion of AI carbon footprint, there's also another giant elephant in the room that we've been ignoring up to this point: data. While not directly linked to AI "hardware" lifecycle, they are a crucial part for building models: data volumes in the LLM field went from an order of 10^11 tokens for GPT-3 (2020-21) to surpassing 10^13 tokens for Llama 3 (2024). [Epoch AI's estimates](https://epochai.org/blog/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data) tell us that we're going to run out of human-generated data to train AI between 2026 and 2032.
 
-Where do we put and how do we maintain all these data? The answer is data centers, which consumed 460 TWh of electric energy in 2022, accounting for 2% of World's demand: [according to the International Energy Agency](https://www.datacenterfrontier.com/energy/article/33038469/iea-study-sees-ai-cryptocurrency-doubling-data-center-energy-consumption-by-2026), data centers have the potential to double their consumes by 2026, with AI and cryptocurrencies leading the increase. 
+Where do we put and how do we maintain all these data? The answer is data centers, which consumed 460 TWh of electric energy in 2022, accounting for 2% of World's demand: [according to the International Energy Agency](https://www.datacenterfrontier.com/energy/article/33038469/iea-study-sees-ai-cryptocurrency-doubling-data-center-energy-consumption-by-2026), data centers have the potential to double their consumes by 2026, with AI and cryptocurrencies leading the increase.
 
 But why do data centers require so much energy? This is not only to keep their supercomputers going 24/7, but it is prominently to avoid overheating: a good share of the energy is indeed absorbed by cooling systems (and this may not be only an electricity problem, but also [a water one](https://www.asce.org/publications-and-news/civil-engineering-source/civil-engineering-magazine/issues/magazine-issue/article/2024/03/engineers-often-need-a-lot-of-water-to-keep-data-centers-cool)). As underlined by MacDonald et al. in their paper, energy expenses are high temperatures-sensitive, which means that, with global warming, cooling may require even more effort.
-
 
 ## 3. Can we do something? An outlook
 
@@ -58,7 +56,7 @@ Also LMSys 2022 paper highlighted a combination of techniques that they used to 
 - _Low precision data format_: employing FP16 GPUs instead of FP32 ones proved more efficient
 - _Algorithm optimization_: choosing the right training and inference algorithms can decrease energy costs up to 5x
 
-Still, questions remain: will all these procedures really help us decrease AI impact on the environment? Will AI itself prove more beneficial for climate crisis that it will be detrimental? 
+Still, questions remain: will all these procedures really help us decrease AI impact on the environment? Will AI itself prove more beneficial for climate crisis that it will be detrimental?
 
 Beyond these questions and all the others that may be asked, what stands out clear from all these observations is that, along with questioning, we need to start taking action, requesting transparency and green policies from AI companies and starting building climate-awareness around our own AI use. And then, at the right time, all the answers we need will come.
 

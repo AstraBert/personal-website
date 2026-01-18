@@ -25,7 +25,7 @@ There are two leading, opposite and polarized, positions when it comes to vibe c
 
 I wanna make it clear: I do not stand at neither of these polar opposites. I believe, as a matter of facts, that vibe coding has much more potential that many people reckon, but I am also firmly convinced that offloading the dev flow entirely and solely to AI (with the coder having no idea of what the code is doing) comes with high risks, not only in terms of security but also in terms of maintainability, CI/CD and future-proofing.
 
-To me there is no question on whether vibe coding will have a future and survive - in a way or in the other, AI will continue to empower and shape this and the future generations of builders: it's not a matter of *if*, it's a matter of *how*.
+To me there is no question on whether vibe coding will have a future and survive - in a way or in the other, AI will continue to empower and shape this and the future generations of builders: it's not a matter of _if_, it's a matter of _how_.
 
 With this being said, let's dive right in the future perspectives of vibe coding.
 
@@ -33,7 +33,7 @@ With this being said, let's dive right in the future perspectives of vibe coding
 
 ### Building Product Mock-Ups
 
-Not much time ago someone from the product team at Google said that they were moving from a writing-first culture to a building-first one: with the advent of vibe-coding, indeed, it is now easier than ever to go from idea to minimum viable product in hours. Instead of an endless draft-review-rewrite process, you can now spend some hours designing, go to the dev team with a clear idea and a clear implementation track. 
+Not much time ago someone from the product team at Google said that they were moving from a writing-first culture to a building-first one: with the advent of vibe-coding, indeed, it is now easier than ever to go from idea to minimum viable product in hours. Instead of an endless draft-review-rewrite process, you can now spend some hours designing, go to the dev team with a clear idea and a clear implementation track.
 
 I think vibe-coding in this sense is extremely useful: no risk that you could interfere with prod code, no potential database cancellation, just feature-driven product development which can, in turn, help the devs ship faster.
 
@@ -41,7 +41,7 @@ I think vibe-coding in this sense is extremely useful: no risk that you could in
 
 Think about it: even if you run a bakery, a shoes shop or a book store, you need a website. Not necessarily to allow people to e-shop, place orders or take appointments on it, but at least to let the world know that you exist and what services do you offer. The problem is that, most of the times, a person that runs a non-IT business is unlikely to have advanced web development skills.
 
-This is why products like Lovable and Bolt are perfect for these businesses: they can allow to build interactive, modern and dynamic websites without spending hundreds of dollars on professionals. Obviously, for more advanced capabilities (like booking or e-shopping) it would be still necessary to have some human supervision, but the time and the cost to get out in the web can be drastically reduced. 
+This is why products like Lovable and Bolt are perfect for these businesses: they can allow to build interactive, modern and dynamic websites without spending hundreds of dollars on professionals. Obviously, for more advanced capabilities (like booking or e-shopping) it would be still necessary to have some human supervision, but the time and the cost to get out in the web can be drastically reduced.
 
 ### Drafting PoCs
 
