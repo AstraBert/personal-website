@@ -33,6 +33,7 @@ export const headerData = {
 };
 
 export const footerData = {
+  links: [],
   secondaryLinks: [
     { text: 'All my links', href: 'https://link.clelia.dev' },
     { text: 'Blog', href: 'https://clelia.dev/blog' },

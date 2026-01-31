@@ -22,7 +22,7 @@ To summarize it, it looked like this:
 
 And, I have to say, despite the raise in popularity of Claude Code and Codex (and many more terminal or IDE-based coding agents), my workflow hasn't changed much: I still handwrite things for the most part (I'd say 70-80% of my code), and resort to AI for the purposes I detailed above.
 
-I've been told and read on socials, many times, that coding agents will make me a nX engineer (with n ranging from 2 to 100), but I can't really wrap my head around coding agents, so I asked myself a simple question: **why don't I vibe-code more?** 
+I've been told and read on socials, many times, that coding agents will make me a nX engineer (with n ranging from 2 to 100), but I can't really wrap my head around coding agents, so I asked myself a simple question: **why don't I vibe-code more?**
 
 I came to one main conclusion, which boils down to: I am not a good enough engineer to trust my reviewing skills on AI-generated code.
 
@@ -30,7 +30,7 @@ I decided to break down the above conclusion into two parts: backend programming
 
 ## Backend
 
-For what concerns backend,  I mostly code in python at work, and use Go and Rust for side projects.
+For what concerns backend, I mostly code in python at work, and use Go and Rust for side projects.
 
 I can say I'm good with Python and fairly good with Go (and still learning Rust) but there is a big catch: I don't have CS foundations, and I am trying to learn as much as I can about systems design but I'm still not at a senior level.
 
@@ -54,7 +54,7 @@ In general, I feel like I can trust myself more with AI-assisted coding in the f
 
 ## Conclusion
 
-In conclusion, my main problem with pure vibe-coding is that I don't trust my abilities enough to make judgements over AI skills: am I being overly anxious and gatekeeping myself to avoid giving the control away? Yes and no -  most of the times my reason is different: I *need* to learn fundamental skills like systems design, scalability strategies, performance tips and tricks, and many more things, to be able to effectively manage my own agents, but if I vibe code everything, I will never learn these skills, and thus will never be able to become an agents manager.
+In conclusion, my main problem with pure vibe-coding is that I don't trust my abilities enough to make judgements over AI skills: am I being overly anxious and gatekeeping myself to avoid giving the control away? Yes and no - most of the times my reason is different: I _need_ to learn fundamental skills like systems design, scalability strategies, performance tips and tricks, and many more things, to be able to effectively manage my own agents, but if I vibe code everything, I will never learn these skills, and thus will never be able to become an agents manager.
 
 It might be naive, but it takes to be a mid-level engineer for a while and get some experience before reaching senior positions and being able to manage other people: and if we're requesting it for human coders, why wouldn't we want it also for AI ones?
 
