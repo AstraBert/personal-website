@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import PostHogLayout from '../layouts/PosthogLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -16,202 +17,204 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+<PostHogLayout>
+  <Layout metadata={metadata}>
+    <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get to know my work',
-        href: 'https://github.com/AstraBert',
-        target: '_blank',
-        icon: 'tabler:arrow-right',
-      },
-      { text: 'More About Me', href: '#aboutme' },
-    ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Clelia Hero Image' }}
-  >
-    <Fragment slot="title">
-      Clelia Astra Bertelli
-      <br />
-      <span class="text-accent dark:text-white"> Open Source Engineer</span>
-    </Fragment>
+    <Hero
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Get to know my work',
+          href: 'https://github.com/AstraBert',
+          target: '_blank',
+          icon: 'tabler:arrow-right',
+        },
+        { text: 'More About Me', href: '#aboutme' },
+      ]}
+      image={{ src: '~/assets/images/hero-image.png', alt: 'Clelia Hero Image' }}
+    >
+      <Fragment slot="title">
+        Clelia Astra Bertelli
+        <br />
+        <span class="text-accent dark:text-white"> Open Source Engineer</span>
+      </Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        I am <span class="font-semibold">Clelia,</span> a passionate developer democratizing AI tools at LlamaIndex
-      </span>
-      <br />
-      I am a pythonist, GitHub geek and a strong open source advocate!
-    </Fragment>
-  </Hero>
+      <Fragment slot="subtitle">
+        <span class="hidden sm:inline">
+          I am <span class="font-semibold">Clelia,</span> a passionate developer democratizing AI tools at LlamaIndex
+        </span>
+        <br />
+        I am a pythonist, GitHub geek and a strong open source advocate!
+      </Fragment>
+    </Hero>
 
-  <!-- Note Widget ******************* -->
+    <!-- Note Widget ******************* -->
 
-  <Note
-    title="A quote I love:"
-    description="So we don't forget when we wake up. Let's write our names on each other. (Your Name, 2016)"
-  />
+    <Note
+      title="A quote I love:"
+      description="So we don't forget when we wake up. Let's write our names on each other. (Your Name, 2016)"
+    />
 
-  <!-- Features Widget *************** -->
+    <!-- Features Widget *************** -->
 
-  <Features
-    id="aboutme"
-    tagline="About Me"
-    title="Profile, interests, skills..."
-    subtitle="I am versatile, I am a builder: I love creating things, digging deep into code - here are some of things about me!"
-    items={[
-      {
-        title: 'Python',
-        description:
-          'I am fully-proficient in python: my stack encompasses LlamaIndex, LLMs clients, transformers and AI-native vector databases clients for AI building; FastAPI and Flask for deployment; Gradio and Streamlit for frontend. Huge Pydantic fan.',
-        icon: 'tabler:brand-python',
-      },
-      {
-        title: 'DevOps',
-        description:
-          'I am passionate about DevOps, and I am particularly versed in Docker: I love the elegant concept of containerization and easy deployment with few commands!',
-        icon: 'tabler:brand-docker',
-      },
-      {
-        title: 'GitHub',
-        description:
-          'GitHub is my second home: I am a git lover, and I am navigating and learning the world of pull requests, actions, projects, packages...',
-        icon: 'tabler:brand-github',
-      },
-      {
-        title: 'Technical Writing',
-        description:
-          'If I am not building things, I really enjoy writing about them: being it the latest advancements in tech and science, or a tutorial about one of my code projects, writing will always be part of my journey!',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Science Enthusiast',
-        description:
-          'I am a biologist (leaning into the realm of bioinformatics) by training, and I am endlessly curious about everything that concerns nature, animals, genetics and molecular biology!',
-        icon: 'tabler:microscope',
-      },
-      {
-        title: 'Open Source',
-        description:
-          'I am a strong open-source advocate: I believe in the power of sharing, since knowledge is the only thing that, when shared, increases instead of diminishing!',
-        icon: 'tabler:rocket',
-      },
-    ]}
-  />
+    <Features
+      id="aboutme"
+      tagline="About Me"
+      title="Profile, interests, skills..."
+      subtitle="I am versatile, I am a builder: I love creating things, digging deep into code - here are some of things about me!"
+      items={[
+        {
+          title: 'Python',
+          description:
+            'I am fully-proficient in python: my stack encompasses LlamaIndex, LLMs clients, transformers and AI-native vector databases clients for AI building; FastAPI and Flask for deployment; Gradio and Streamlit for frontend. Huge Pydantic fan.',
+          icon: 'tabler:brand-python',
+        },
+        {
+          title: 'DevOps',
+          description:
+            'I am passionate about DevOps, and I am particularly versed in Docker: I love the elegant concept of containerization and easy deployment with few commands!',
+          icon: 'tabler:brand-docker',
+        },
+        {
+          title: 'GitHub',
+          description:
+            'GitHub is my second home: I am a git lover, and I am navigating and learning the world of pull requests, actions, projects, packages...',
+          icon: 'tabler:brand-github',
+        },
+        {
+          title: 'Technical Writing',
+          description:
+            'If I am not building things, I really enjoy writing about them: being it the latest advancements in tech and science, or a tutorial about one of my code projects, writing will always be part of my journey!',
+          icon: 'tabler:article',
+        },
+        {
+          title: 'Science Enthusiast',
+          description:
+            'I am a biologist (leaning into the realm of bioinformatics) by training, and I am endlessly curious about everything that concerns nature, animals, genetics and molecular biology!',
+          icon: 'tabler:microscope',
+        },
+        {
+          title: 'Open Source',
+          description:
+            'I am a strong open-source advocate: I believe in the power of sharing, since knowledge is the only thing that, when shared, increases instead of diminishing!',
+          icon: 'tabler:rocket',
+        },
+      ]}
+    />
 
-  <!-- Steps Widget ****************** -->
+    <!-- Steps Widget ****************** -->
 
-  <Steps
-    id="project-design"
-    title="How I approach my projects"
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Designing</span>',
-        description:
-          'The first thing I do is to create a mental schema of what I would like to produce: the features, the tech stack, the intended audience... Everything needs to be drafted in the back of my mind.',
-        icon: 'tabler:timeline',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Learn and Research</span>',
-        description:
-          "Once I designed the idea, I start researching innovative ways to implement it, and I try to learn all the needed concepts. I mostly use good ol' browsers to do that, but sometimes I let LLMs help.",
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Build</span>',
-        description:
-          'Once I have the design and the concepts, building starts. I try to code my applications hierarchically: for example, if I need to create a full stack app connected to an API, I first lay out the utilities, then the API/backend and finally the frontend.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Step 4: <span class="font-medium">Iterate and fix bugs</span>',
-        description:
-          'After building, I test the behavior of my project and I try to find as many bugs as I can, fixing them after every failed iteration, until I have a satisfying result.',
-        icon: 'tabler:bug-off',
-      },
-      {
-        title: 'Ready!',
-        description:
-          'Once I am satisfied, I prepare a nice README for my project, give it a license and contribution guidelines, and then I just push it out live - open source as always!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{ src: '~/assets/images/project-design.png', alt: 'Project Design Image' }}
-  />
+    <Steps
+      id="project-design"
+      title="How I approach my projects"
+      items={[
+        {
+          title: 'Step 1: <span class="font-medium">Designing</span>',
+          description:
+            'The first thing I do is to create a mental schema of what I would like to produce: the features, the tech stack, the intended audience... Everything needs to be drafted in the back of my mind.',
+          icon: 'tabler:timeline',
+        },
+        {
+          title: 'Step 2: <span class="font-medium">Learn and Research</span>',
+          description:
+            "Once I designed the idea, I start researching innovative ways to implement it, and I try to learn all the needed concepts. I mostly use good ol' browsers to do that, but sometimes I let LLMs help.",
+          icon: 'tabler:search',
+        },
+        {
+          title: 'Step 3: <span class="font-medium">Build</span>',
+          description:
+            'Once I have the design and the concepts, building starts. I try to code my applications hierarchically: for example, if I need to create a full stack app connected to an API, I first lay out the utilities, then the API/backend and finally the frontend.',
+          icon: 'tabler:code',
+        },
+        {
+          title: 'Step 4: <span class="font-medium">Iterate and fix bugs</span>',
+          description:
+            'After building, I test the behavior of my project and I try to find as many bugs as I can, fixing them after every failed iteration, until I have a satisfying result.',
+          icon: 'tabler:bug-off',
+        },
+        {
+          title: 'Ready!',
+          description:
+            'Once I am satisfied, I prepare a nice README for my project, give it a license and contribution guidelines, and then I just push it out live - open source as always!',
+          icon: 'tabler:check',
+        },
+      ]}
+      image={{ src: '~/assets/images/project-design.png', alt: 'Project Design Image' }}
+    />
 
-  <!-- Features2 Widget ************** -->
+    <!-- Features2 Widget ************** -->
 
-  <Features2
-    id="soft-skills"
-    title="My soft skills"
-    subtitle="Because when you're a dev, you don't just build tech, you need to live it"
-    tagline="Beyond tech"
-    items={[
-      {
-        title: 'Public speaking and presentations',
-        description:
-          'One of my core skills is being able to pitch projects in front of people by preparing visually appealing presentations to efficiently deliver my ideas.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Critical thinking',
-        description:
-          'Critical thinking is a skill that I cultivated in my life by taking part into competitive debates: I like to reflect, understand, question, until I get real answers.',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Open communication',
-        description:
-          'I like things being transparent, and I feel like every good working relationship is built upon open and honest communication, a best practice that I always try to follow.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+    <Features2
+      id="soft-skills"
+      title="My soft skills"
+      subtitle="Because when you're a dev, you don't just build tech, you need to live it"
+      tagline="Beyond tech"
+      items={[
+        {
+          title: 'Public speaking and presentations',
+          description:
+            'One of my core skills is being able to pitch projects in front of people by preparing visually appealing presentations to efficiently deliver my ideas.',
+          icon: 'flat-color-icons:advertising',
+        },
+        {
+          title: 'Critical thinking',
+          description:
+            'Critical thinking is a skill that I cultivated in my life by taking part into competitive debates: I like to reflect, understand, question, until I get real answers.',
+          icon: 'flat-color-icons:document',
+        },
+        {
+          title: 'Open communication',
+          description:
+            'I like things being transparent, and I feel like every good working relationship is built upon open and honest communication, a best practice that I always try to follow.',
+          icon: 'flat-color-icons:voice-presentation',
+        },
+      ]}
+    >
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Features2>
 
-  <!-- HighlightedPosts Widget ******* -->
+    <!-- HighlightedPosts Widget ******* -->
 
-  <BlogLatestPosts
-    title="Discover my blog!"
-    information={`The blog contains articles related to scientific discoveries,
+    <BlogLatestPosts
+      title="Discover my blog!"
+      information={`The blog contains articles related to scientific discoveries,
                   as well as more technical articles about programming.
                   Enjoy!
                 `}
-  />
+    />
 
-  <!-- Stats Widget ****************** -->
+    <!-- Stats Widget ****************** -->
 
-  <Stats
-    stats={[
-      { title: 'Contributions on GitHub', amount: '3K+' },
-      { title: 'Stars on GitHub', amount: '1.9K+' },
-      { title: 'Followers on GitHub', amount: '350+' },
-    ]}
-  />
+    <Stats
+      stats={[
+        { title: 'Contributions on GitHub', amount: '3K+' },
+        { title: 'Stars on GitHub', amount: '1.9K+' },
+        { title: 'Followers on GitHub', amount: '350+' },
+      ]}
+    />
 
-  <!-- CallToAction Widget *********** -->
+    <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Visit my profile ',
-        href: 'https://www.linkedin.com/in/clelia-astra-bertelli-583904297/',
-        target: '_blank',
-        icon: 'tabler:brand-linkedin',
-      },
-    ]}
-  >
-    <Fragment slot="title"> Let's grow our networks! </Fragment>
+    <CallToAction
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Visit my profile ',
+          href: 'https://www.linkedin.com/in/clelia-astra-bertelli-583904297/',
+          target: '_blank',
+          icon: 'tabler:brand-linkedin',
+        },
+      ]}
+    >
+      <Fragment slot="title"> Let's grow our networks! </Fragment>
 
-    <Fragment slot="subtitle">
-      If you wish to chat and know me professionally, make sure<br class="hidden md:inline" />to connect with me on
-      LinkedIn!
-    </Fragment>
-  </CallToAction>
-</Layout>
+      <Fragment slot="subtitle">
+        If you wish to chat and know me professionally, make sure<br class="hidden md:inline" />to connect with me on
+        LinkedIn!
+      </Fragment>
+    </CallToAction>
+  </Layout>
+</PostHogLayout>
