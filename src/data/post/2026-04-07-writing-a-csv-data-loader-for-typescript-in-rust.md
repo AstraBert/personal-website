@@ -2,7 +2,7 @@
 publishDate: 2026-04-07T00:00:00Z
 author: Clelia Astra Bertelli
 title: Writing a CSV Data Loader for TypeScript in Rust
-excerpt: Commentary of my ongoing journey into building a Rust native addon for Node 
+excerpt: Commentary of my ongoing journey into building a Rust native addon for Node
 category: Coding
 tags:
   - rust
@@ -12,9 +12,9 @@ metadata:
   canonical: https://clelia.dev/blog/2026-04-07-writing-a-csv-data-loader-for-typescript-in-rust
 ---
 
-Not much time ago, I was talking to someone about TypeScript and they mentioned the fact that TS does not really have many CSV parsing packages that can convert data in a tabular format (like Pandas or Polars for python). 
+Not much time ago, I was talking to someone about TypeScript and they mentioned the fact that TS does not really have many CSV parsing packages that can convert data in a tabular format (like Pandas or Polars for python).
 
-I know TypeScript is not supposed to be a language for data science and machine learning, but, since working with [LiteParse](https://github.com/run-llama/liteparse) (a document parsing library), my perspective on the potential of TypeScript for data processing has definitely changed, that’s why I challenged myself to create a performant CSV data loader for TS. 
+I know TypeScript is not supposed to be a language for data science and machine learning, but, since working with [LiteParse](https://github.com/run-llama/liteparse) (a document parsing library), my perspective on the potential of TypeScript for data processing has definitely changed, that’s why I challenged myself to create a performant CSV data loader for TS.
 
 The direction I took, though, might sound odd to someone: I decided to write the core code in Rust and cross-compile it with [napi-rs](https://napi.rs), instead of writing the CSV parser in pure TypeScript/JavaScript.
 
@@ -33,7 +33,7 @@ In my first iteration, the main purpose was to maintain flexible typing for the 
 
 ```rust
 #[napi]
-pub enum CsvValue { 
+pub enum CsvValue {
 	String(String),
 	Float(f64),
 	Integer(i64),
@@ -51,7 +51,7 @@ pub struct DataFrame {
 }
 ```
 
-The main problem with this approach was in the numerous allocations the CSV parsing code made. First, it read CSV records through the [csv crate](https://docs.rs/csv/latest/csv/index.html), then it parsed each record (allocating it as a `String`) into a `CsvValue`  (with some more  string allocations in the conversion logic). To top it all off, type inference and casting was performed for each record of each row, multiplying allocations and data conversion workloads.
+The main problem with this approach was in the numerous allocations the CSV parsing code made. First, it read CSV records through the [csv crate](https://docs.rs/csv/latest/csv/index.html), then it parsed each record (allocating it as a `String`) into a `CsvValue` (with some more string allocations in the conversion logic). To top it all off, type inference and casting was performed for each record of each row, multiplying allocations and data conversion workloads.
 
 The other main problem with the implementation was the use of hashmaps, since I was using one to hold the CSV records, one to hold the index → column name relationship and one to hold the column → data type relationship to compare the inferred type of a record with the current type of a column. I was accessing the map holding CSV records for each row, using the `get_mut` method on the vector associated with the column and pushing new records to the mutable vector reference. I was also getting the datatype hashmap for every record to compare and adjust typing (e.g., from integer to float or from integer to string). This meant a lot of back-and-forth from memory, as well as using hashing in the hot path, instead of the direct, index-based access that a Vec could offer. Here is the “hot path” implementation:
 
@@ -89,7 +89,6 @@ I benchmarked the cross-compiled TS code with tinybench, and it took up to 2 sec
 ### Second iteration
 
 > All the optimizations you will see from now on were the product of my discussion and pair-programming with Claude, although I always forced myself to understand the code and the optimization choices before including them in the codebase
-> 
 
 For the second iteration, I went for a paradigm shift in the data structure. Instead of using a vector of fat enums representing each CSV record, I decided to go with the closest data structure to a typed array I could get to:
 
@@ -117,7 +116,7 @@ This brought down the total benchmark time from 2s to 1s on 1.000.000 rows, defi
 
 With the third iteration, Claude made me realize that I didn't really need to hold everything in memory as a hashmap: since the columns always come in the same order, I could easily use a vector and access the column name by index, eliminating hashing overhead for the column data, and reducing it by swapping the column name with its numeric index for the column → datatype hashmap.
 
-I also tried my best to use `&str` anywhere instead of owned `String`s,  to avoid string allocations, but had to opt for wrapping the string data into a `Box<str>` smart pointer, to prevent a lifetime-related bug (`&str` were obtained while iterating on CSV records, but were later used - when the records they pointed to were already dropped - to build the DataFrame).
+I also tried my best to use `&str` anywhere instead of owned `String`s, to avoid string allocations, but had to opt for wrapping the string data into a `Box<str>` smart pointer, to prevent a lifetime-related bug (`&str` were obtained while iterating on CSV records, but were later used - when the records they pointed to were already dropped - to build the DataFrame).
 
 The time taken to read a 1.000.000 rows CSV dropped to 0.7s, which already achieved my goal of sub-second speed… More improvements were still to come, though.
 
