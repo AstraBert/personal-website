@@ -244,7 +244,7 @@ for judge in judges:
   print("Done with " + judge + " being a judge")
 ```
 
-The collected data were manually annotated ([_Code reference_]()), saved to a CSV file and uploaded as [a dataset on HuggingFace hub](https://huggingface.co/datasets/as-cle-bert/DebateLLMs).
+The collected data were manually annotated ([_Code reference_](<>)), saved to a CSV file and uploaded as [a dataset on HuggingFace hub](https://huggingface.co/datasets/as-cle-bert/DebateLLMs).
 
 ### 2d. Post-Tournament Analysis
 
