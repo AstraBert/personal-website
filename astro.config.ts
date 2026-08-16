@@ -80,6 +80,10 @@ export default defineConfig({
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
+  server: {
+    allowedHosts: true,
+  },
+
   vite: {
     resolve: {
       alias: {
